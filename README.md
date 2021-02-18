@@ -28,3 +28,19 @@ extern FILE *stdin;
 extern FILE *stdout;
 extern FILE *stderr;
 ```
+
+用户态和内核态的切换需要时间（超人变身）, 缓冲不能太小。
+`# include <utmp.h>`
+### 3. 改变文件当前位置
+| 项目      | lseek            | 
+| --------- | ------------------- | 
+| 目标      | 使指针指向文件中的指定位置       | 
+| 头文件      | # include <sys/type.h>、# include <unistd.h> |
+| 函数原型   | off_t oldpos = lseek(int fd, off_t dist, int base) |
+| 参数       |   fd   文件描述符   |
+|            |   dist  移动的距离  | 
+|            |   base  SEEK_SET => 文件的开始   |
+|            |         SEEK_CUR => 当前位置     |
+|            |         SEEK_SET => 文件结尾     |
+| 返回值      |   -1 遇到错误   |
+|            |   oldpos  指针变化前的位置  | 
