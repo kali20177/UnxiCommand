@@ -1,3 +1,5 @@
+/* 主函数判断从文件还是标准输入中获取数据，答应数据源，调用do_more将数据显示在显示器上，满一屏后调用see_more */
+
 /* more01.c - version 0.1 of more
  * read and print 24 lines then pause for a few special commands
  */
@@ -56,7 +58,7 @@ int see_more()
  */
 {
 		int c;
-		printf("\033[7m more? \033[m");
+		printf("\033[7m more? \033[m");  
 		while ( ( c = getchar() ) != EOF )  //get charater on the keyboard. the cycle will stop until user press key.
 				//getchar and getc are different in someting ...
 		{
